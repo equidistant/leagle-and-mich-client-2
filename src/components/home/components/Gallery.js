@@ -74,11 +74,11 @@ const A = styled.a.attrs(props => ({
   href: props.img.src
 }))``
 
-const getImages = ({ url, length}) => [...Array(length)].map((img, index) => {return { id: index, alt: 'Image', src: `http://localhost:3000/images/${url}/${index + 1}.jpg` }})
+const getImages = ({ url, length}) => [...Array(length)].map((img, index) => {return { id: index, alt: 'Image', src: `${process.env.REACT_APP_SERVER}/images/${url}/${index + 1}.jpg` }})
 
 const getRatios = ({ url }) => axios({
   method: 'get',
-  url: `http://localhost:3000/sizes/${url}`
+  url: `${process.env.REACT_APP_SERVER}/sizes/${url}`
 })
 
 export default Gallery
