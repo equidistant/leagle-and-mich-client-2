@@ -23,7 +23,7 @@ class Gallery extends Component {
     const images = getImages({ url: '/travels/soca', length: ratios.data.length })
     this.setState({ images })
     try {
-      const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 5
+      const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
       window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
     } catch (err) {
       console.log(err)
