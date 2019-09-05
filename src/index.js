@@ -7,9 +7,6 @@ import { GlobalStyle } from './style'
 import { Header, Home, Footer } from './components'
 import { useTwoElemIntersection } from './effects'
 
-import $ from 'jquery'
-window.$ = $
-
 const App = () => {
   return (
     <BrowserRouter>

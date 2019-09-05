@@ -3,6 +3,10 @@ import axios from 'axios'
 import styled, { css } from 'styled-components'
 import justifiedLayout from 'justified-layout'
 
+import $ from 'jquery'
+window.jQuery = $
+window.$ = $
+
 class Gallery extends Component {
   state = {
     images: []
@@ -23,7 +27,12 @@ class Gallery extends Component {
     const images = getImages({ url: '/travels/soca', length: ratios.data.length })
     this.setState({ images })
     const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
-    window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
+    try {
+      window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
+    } catch (err) {
+      await sleep(500)
+      window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
+    }
   }
 
   renderImages = (images) => images.map((image, index) => {
@@ -33,6 +42,10 @@ class Gallery extends Component {
       </A>
     )
   })
+}
+
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
 const Container = styled.div`
