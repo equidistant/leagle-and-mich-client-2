@@ -22,12 +22,8 @@ class Gallery extends Component {
     const ratios = await getRatios({ url: 'soca' })
     const images = getImages({ url: '/travels/soca', length: ratios.data.length })
     this.setState({ images })
-    try {
-      const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
-      window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
-    } catch (err) {
-      console.log(err)
-    }
+    const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
+    window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
   }
 
   renderImages = (images) => images.map((image, index) => {
