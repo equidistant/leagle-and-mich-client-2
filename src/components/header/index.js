@@ -11,7 +11,7 @@ const Header = () => {
   const [{ windowWidth, small }] = useWindowWidth(800)
   const [toggled, setToggled] = useState(false)
   const [logoWidth] = useElemProp({ ref: logoRef, propName: 'offsetWidth'})
-  const show = scrolled || toggled || window.innerWidth < 800 || small
+  const show = scrolled || toggled || small
   return (
     <Container>
       <Link show={show} offset={windowWidth}>Travel Blog</Link>

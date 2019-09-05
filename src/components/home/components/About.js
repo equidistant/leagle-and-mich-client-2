@@ -8,15 +8,15 @@ import { Mislav, Ana } from '../../../images'
 const About = () => {
   const refs = [useRef(null), useRef(null)]
   const [visible] = useIntersection(refs)
-  const [{ windowWidth }] = useWindowWidth(800)
+  const [{ windowWidth, small }] = useWindowWidth(800)
   return (
     <Container>
       <Header>About Us</Header>
-      <Circles>
+      <Circles visible={visible[0]}>
         <TextAna visible={visible[0]}><TextHeader>Mislav o Ani</TextHeader> "Voli putovanja, fotografiju i sladoled."</TextAna>
         <Circle img={Ana} visible={visible[0]} offset={-200} ref={refs[0]} id={0}/>
       </Circles>
-      <Circles>
+      <Circles visible={visible[1]}>
         <Circle img={Mislav} visible={visible[1]} offset={200} ref={refs[1]} id={1}/>
         <TextMislav visible={visible[1]}><TextHeader>Ana o Mislavu</TextHeader> "Voli putovanja, fotografiju i sladoled."</TextMislav>
       </Circles>
@@ -51,7 +51,7 @@ const TextHeader = styled.div`
   margin: 1rem;
 `
 
-const TextAna = styled.div`
+const Text = styled.div`
   visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -59,8 +59,7 @@ const TextAna = styled.div`
   justify-content: center;
   ${props => props.visible && css`
     visibility: visible;
-    animation: ${appear} 1s ease-in-out;
-    animation-fill-mode: forwards;
+
   `}
   text-align: center;
   border-radius: 10px;
@@ -68,35 +67,24 @@ const TextAna = styled.div`
   padding: 1vw;
   font-size: calc(0.8rem + 0.4vw);
   font-style: italic;
+  width: calc(15rem + 10vw);
+`
+const TextAna = styled(Text)`
 `
 
-const TextMislav = styled.div`
-  visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  ${props => props.visible && css`
-    visibility: visible;
-    animation: ${appear} 1s ease-in-out;
-    animation-fill-mode: forwards;
-  `}
-  text-align: center;
-  border-radius: 10px;
-  margin: 1vw;
-  padding: 1vw;
-  font-size: calc(0.8rem + 0.4vw);
-  font-style: italic;
+const TextMislav = styled(Text)`
 `
 
+// animation: ${appear} 1s ease-in-out;
+// animation-fill-mode: forwards;
 const Circle = styled.div`
   border-radius: 50%;
-  width: calc(7rem + 5vw);
-  height: calc(7rem + 5vw);
+  width: calc(4rem + 8vw);
+  height: calc(4rem + 8vw);
   visibility: hidden;
   ${props => props.visible && css`
     visibility: visible;
-    animation: ${props => slideAppear({x1: props.offset, y1: 0, z1: 0, x2: 0, y2: 0, z2: 0})} 1s ease-in-out;
+
   `}
   background-position: center;
   background-size: cover;
@@ -104,9 +92,14 @@ const Circle = styled.div`
   margin: 1vw;
 `
 
+    // animation: ${props => slideAppear({x1: props.offset, y1: 0, z1: 0, x2: 0, y2: 0, z2: 0})} 1s ease-in-out;
 const Circles = styled.div`
   display: flex;
   margin: 1vw;
+  ${props => props.visible && css`
+    visibility: visible;
+    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 0.4s ease-in-out;
+  `}
 `
 
 export default About

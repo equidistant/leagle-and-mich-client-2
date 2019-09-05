@@ -190,7 +190,6 @@ export const appear = keyframes`
   }
 `
 
-
 // export const slideFrom = (x) => keyframes`
 //   0% {
 //     transform: translate3d(${x}px, 0 , 0);

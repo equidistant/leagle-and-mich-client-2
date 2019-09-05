@@ -33,7 +33,7 @@ export const useScroll = function (boundary) {
 
 export const useWindowWidth = function (smallPx) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  const [small, setSmall] = useState(false)
+  const [small, setSmall] = useState(window.innerWidth < smallPx)
   let windowWidthPx = `${windowWidth}px`
   useEffect(() => {
     const scrollListener = (e) => {
