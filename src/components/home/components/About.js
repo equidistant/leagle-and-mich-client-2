@@ -7,7 +7,7 @@ import { Mislav, Ana } from '../../../images'
 
 const About = () => {
   const refs = [useRef(null), useRef(null)]
-  const [visible] = useIntersection(refs)
+  const [visible] = useIntersection({ elements: refs, threshold: 0.1 })
   const [{ windowWidth, small }] = useWindowWidth(800)
   return (
     <Container>
@@ -17,7 +17,7 @@ const About = () => {
           <TextHeader>Mislav o Ani</TextHeader>
           "Voli putovanja, fotografiju i sladoled."
         </TextAna>
-        <Circle img={Ana}  id={0}/>
+        <Circle img={Ana} />
       </Circles>
       <Circles visible={visible[1]} ref={refs[1]} id={1}>
         <Circle img={Mislav} />
@@ -94,7 +94,7 @@ const Circles = styled.div`
   display: flex;
   margin: 1vw;
   ${props => props.visible && css`
-    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 1s ease-in-out;
+    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 0.6s ease-in-out;
     animation-fill-mode: forwards;
   `}
 `

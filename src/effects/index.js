@@ -51,14 +51,14 @@ export const useWindowWidth = function (smallPx) {
   return [{windowWidth, windowWidthPx, small}, setWindowWidth]
 }
 
-export const useIntersection = function (elements) {
+export const useIntersection = function ({ elements, threshold}) {
   const [visible, setVisible] = useState([...Array(elements.length)].map(() => false))
   let observers = []
   useEffect(() => {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: [0, 0.2]
+      threshold: [0, threshold]
     }
     const intersectionCallback = (entries) => {
       entries.forEach(entry => {

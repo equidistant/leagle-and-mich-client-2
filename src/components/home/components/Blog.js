@@ -8,7 +8,7 @@ import { slideUp, slideRightFixed, slideLeftFixed, slideUpLittle } from '../../.
 const Blog = () => {
   let refs = []
   const index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-  const [visible] = useIntersection(refs)
+  const [visible] = useIntersection({ elements: refs, threshold: 0.2 })
   const images = [
     { id: 0, src: `${process.env.REACT_APP_SERVER}/images/slideshow/1.jpg` },
     { id: 1, src: `${process.env.REACT_APP_SERVER}/images/slideshow/2.jpg` },
