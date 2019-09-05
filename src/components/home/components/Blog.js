@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import styled, { css } from 'styled-components'
 
-import { useIntersection } from '../../../effects'
+import { useIntersection, useWindowWidth } from '../../../effects'
 import { Map, Bed } from '../../../images'
 import { slideUp, slideRightFixed, slideLeftFixed, slideUpLittle } from '../../../animations'
 
@@ -9,6 +9,7 @@ const Blog = () => {
   let refs = []
   const index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
   const [visible] = useIntersection({ elements: refs, threshold: 0.2 })
+  const [{ windowWidth, small }] = useWindowWidth(800)
   const images = [
     { id: 0, src: `${process.env.REACT_APP_SERVER}/images/slideshow/1.jpg` },
     { id: 1, src: `${process.env.REACT_APP_SERVER}/images/slideshow/2.jpg` },
@@ -45,30 +46,33 @@ const Blog = () => {
           <P>Krupa, Croatia</P>
           <Tags>#hike #river #canyon #whitewater #camping</Tags>
         </Card>
-        <Card ref={ref => refs.push(ref)} visible={visible[3]} id={index[3]}>
-          <Img img={images[3]}/>
-          <SmallHeader>Featured</SmallHeader>
-          <BigHeader>London</BigHeader>
-          <Line/>
-          <P>London, England</P>
-          <Tags>#urban #rooftops #gin&tonic #rain #parks</Tags>
-        </Card>
-        <Card ref={ref => refs.push(ref)} visible={visible[4]} id={index[4]}>
-          <Img img={images[4]}/>
-          <SmallHeader>Featured</SmallHeader>
-          <BigHeader>Soca Valley</BigHeader>
-          <Line/>
-          <P>Soca, Slovenia</P>
-          <Tags>#roadtrip #camping #river #kayak #rafting #sup</Tags>
-        </Card>
-        <Card ref={ref => refs.push(ref)} visible={visible[5]} id={index[5]}>
-          <Img img={images[5]}/>
-          <SmallHeader>Featured</SmallHeader>
-          <BigHeader>Cuba</BigHeader>
-          <Line/>
-          <P>Havana, Trinidad, Vinales</P>
-          <Tags>#sea #sun #salsa #beach #cubalibre #mojito</Tags>
-        </Card>
+        { !small &&
+          <>
+            <Card ref={ref => refs.push(ref)} visible={visible[3]} id={index[3]}>
+              <Img img={images[3]}/>
+              <SmallHeader>Featured</SmallHeader>
+              <BigHeader>London</BigHeader>
+              <Line/>
+              <P>London, England</P>
+              <Tags>#urban #rooftops #gin&tonic #rain #parks</Tags>
+            </Card>
+            <Card ref={ref => refs.push(ref)} visible={visible[4]} id={index[4]}>
+              <Img img={images[4]}/>
+              <SmallHeader>Featured</SmallHeader>
+              <BigHeader>Soca Valley</BigHeader>
+              <Line/>
+              <P>Soca, Slovenia</P>
+              <Tags>#roadtrip #camping #river #kayak #rafting #sup</Tags>
+            </Card>
+            <Card ref={ref => refs.push(ref)} visible={visible[5]} id={index[5]}>
+              <Img img={images[5]}/>
+              <SmallHeader>Featured</SmallHeader>
+              <BigHeader>Cuba</BigHeader>
+              <Line/>
+              <P>Havana, Trinidad, Vinales</P>
+              <Tags>#sea #sun #salsa #beach #cubalibre #mojito</Tags>
+            </Card>
+          </>}
       </CardGrid>
     </Container>
   )

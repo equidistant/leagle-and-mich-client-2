@@ -27,12 +27,22 @@ class Gallery extends Component {
     const images = getImages({ url: '/travels/soca', length: ratios.data.length })
     this.setState({ images })
     const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
+    window.addEventListener('resize', this.resizeListener)
     try {
       window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
     } catch (err) {
       await sleep(500)
       window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
     }
+  }
+
+  resizeListener () {
+    const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
+    window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeListener)
   }
 
   renderImages = (images) => images.map((image, index) => {

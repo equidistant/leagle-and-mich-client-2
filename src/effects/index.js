@@ -36,7 +36,7 @@ export const useWindowWidth = function (smallPx) {
   const [small, setSmall] = useState(window.innerWidth < smallPx)
   let windowWidthPx = `${windowWidth}px`
   useEffect(() => {
-    const scrollListener = (e) => {
+    const resizeListener = (e) => {
       setWindowWidth(window.innerWidth)
       if (window.innerWidth < smallPx && !small) {
         setSmall(true)
@@ -44,9 +44,9 @@ export const useWindowWidth = function (smallPx) {
         setSmall(false)
       }
     }
-    const throttledScrollListener = _.throttle(scrollListener, 100, { leading: true, trailing: true})
-    window.addEventListener('resize', throttledScrollListener)
-    return () => window.removeEventListener('resize', throttledScrollListener)
+    const throttledResizeListener = _.throttle(resizeListener, 100, { leading: true, trailing: true})
+    window.addEventListener('resize', throttledResizeListener)
+    return () => window.removeEventListener('resize', throttledResizeListener)
   }, [windowWidth])
   return [{windowWidth, windowWidthPx, small}, setWindowWidth]
 }
