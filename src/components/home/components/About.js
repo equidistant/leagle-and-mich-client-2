@@ -12,13 +12,19 @@ const About = () => {
   return (
     <Container>
       <Header>About Us</Header>
-      <Circles visible={visible[0]}>
-        <TextAna visible={visible[0]}><TextHeader>Mislav o Ani</TextHeader> "Voli putovanja, fotografiju i sladoled."</TextAna>
-        <Circle img={Ana} visible={visible[0]} offset={-200} ref={refs[0]} id={0}/>
+      <Circles visible={visible[0]} ref={refs[0]} id={0}>
+        <TextAna>
+          <TextHeader>Mislav o Ani</TextHeader>
+          "Voli putovanja, fotografiju i sladoled."
+        </TextAna>
+        <Circle img={Ana}  id={0}/>
       </Circles>
-      <Circles visible={visible[1]}>
-        <Circle img={Mislav} visible={visible[1]} offset={200} ref={refs[1]} id={1}/>
-        <TextMislav visible={visible[1]}><TextHeader>Ana o Mislavu</TextHeader> "Voli putovanja, fotografiju i sladoled."</TextMislav>
+      <Circles visible={visible[1]} ref={refs[1]} id={1}>
+        <Circle img={Mislav} />
+        <TextMislav>
+          <TextHeader>Ana o Mislavu</TextHeader>
+          "Voli putovanja, fotografiju i sladoled."
+        </TextMislav>
       </Circles>
     </Container>
   )
@@ -52,15 +58,10 @@ const TextHeader = styled.div`
 `
 
 const Text = styled.div`
-  visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  ${props => props.visible && css`
-    visibility: visible;
-
-  `}
   text-align: center;
   border-radius: 10px;
   margin: 1vw;
@@ -81,11 +82,6 @@ const Circle = styled.div`
   border-radius: 50%;
   width: calc(4rem + 8vw);
   height: calc(4rem + 8vw);
-  visibility: hidden;
-  ${props => props.visible && css`
-    visibility: visible;
-
-  `}
   background-position: center;
   background-size: cover;
   background-image: url(${props => props.img});
@@ -94,11 +90,12 @@ const Circle = styled.div`
 
     // animation: ${props => slideAppear({x1: props.offset, y1: 0, z1: 0, x2: 0, y2: 0, z2: 0})} 1s ease-in-out;
 const Circles = styled.div`
+  opacity: 0;
   display: flex;
   margin: 1vw;
   ${props => props.visible && css`
-    visibility: visible;
-    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 0.4s ease-in-out;
+    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 1s ease-in-out;
+    animation-fill-mode: forwards;
   `}
 `
 
