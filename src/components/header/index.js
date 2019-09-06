@@ -26,13 +26,14 @@ const Header = () => {
 }
 
 const Container = styled.div`
-  height: 10.5vh;
+  height: 8vw;
   width: 100%;
   position: fixed;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
 `
 
 export default Header

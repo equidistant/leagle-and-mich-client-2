@@ -6,12 +6,15 @@ import { slide, slideFrom } from '../../../animations'
 
 // background-color: #AC9472;
 // background-color: #078FFF;
+
+// width: 5rem;
+// height: 0.4rem;
 const Span = styled.span`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 5rem;
-  height: 0.4rem;
+  width: calc(2.5rem + 2.5vw);
+  height: calc(0.2rem + 0.2vw);
   background-color: #AC9472;
   border-radius: 2px;
   overflow: hidden;
@@ -53,10 +56,12 @@ const Span = styled.span`
     }
   `}
 `
+
+  // width: 8rem;
 const Container = styled.button`
   position: absolute;
   right: -25rem;
-  width: 8rem;
+  width: calc(4rem + 4vw);
   height: 100%;
   cursor: pointer;
   border-radius: 50%;

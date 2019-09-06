@@ -9,8 +9,8 @@ const Logo = styled.div`
   background-image: url(${LogoHeader});
   z-index: 5;
   height: 100%;
-  width: calc(3rem + 9vw);
-  min-width: 7rem;
+  width: calc(4rem + 7vw);
+  min-width: 6rem;
   ${props => props.show && css`
     animation: ${props => slide({x1: 0, y1: 0, z1: 0, x2: props.offset, y2: 0, z2: 0})} 0.4s ease-in-out;
     animation-fill-mode: forwards;
