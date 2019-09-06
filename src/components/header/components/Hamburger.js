@@ -38,7 +38,7 @@ const Span = styled.span`
     animation: ${spanThirdOff} 0.5s ease-in-out;
     animation-fill-mode: forwards;
   }
-  ${props => props.toggle && css`
+  ${props => props.toggled && css`
     &:nth-child(1) {
       animation: ${spanFirstOn} 0.5s ease-in-out;
       animation-fill-mode: forwards;
@@ -87,11 +87,11 @@ const Container = styled.button`
   `}
 `
 
-const Hamburger = ({ toggle, hamburgerRef, ...rest }) =>
-  <Container toggle={toggle} ref={hamburgerRef} {...rest}>
-    <Span toggle={toggle}/>
-    <Span toggle={toggle}/>
-    <Span toggle={toggle}/>
+const Hamburger = ({ toggled, hamburgerRef, ...rest }) =>
+  <Container toggled={toggled} ref={hamburgerRef} {...rest}>
+    <Span toggled={toggled}/>
+    <Span toggled={toggled}/>
+    <Span toggled={toggled}/>
   </Container>
 
 export default Hamburger
