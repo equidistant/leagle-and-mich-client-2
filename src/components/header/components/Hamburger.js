@@ -13,8 +13,8 @@ const Span = styled.span`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: calc(2.5rem + 2.5vw);
-  height: calc(0.2rem + 0.2vw);
+  width: calc(3.75rem + 2.5vw);
+  height: calc(0.3rem + 0.2vw);
   background-color: #AC9472;
   border-radius: 2px;
   overflow: hidden;
@@ -61,7 +61,7 @@ const Span = styled.span`
 const Container = styled.button`
   position: absolute;
   right: -25rem;
-  width: calc(4rem + 4vw);
+  width: calc(6rem + 4vw);
   height: 100%;
   cursor: pointer;
   border-radius: 50%;
