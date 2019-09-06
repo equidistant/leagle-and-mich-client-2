@@ -46,16 +46,16 @@ const Blog = () => {
           <P>Krupa, Croatia</P>
           <Tags>#hike #river #canyon #whitewater #camping</Tags>
         </Card>
+        <Card ref={ref => refs.push(ref)} visible={visible[3]} id={index[3]}>
+          <Img img={images[3]}/>
+          <SmallHeader>Featured</SmallHeader>
+          <BigHeader>London</BigHeader>
+          <Line/>
+          <P>London, England</P>
+          <Tags>#urban #rooftops #gin&tonic #rain #parks</Tags>
+        </Card>
         { !small &&
           <>
-            <Card ref={ref => refs.push(ref)} visible={visible[3]} id={index[3]}>
-              <Img img={images[3]}/>
-              <SmallHeader>Featured</SmallHeader>
-              <BigHeader>London</BigHeader>
-              <Line/>
-              <P>London, England</P>
-              <Tags>#urban #rooftops #gin&tonic #rain #parks</Tags>
-            </Card>
             <Card ref={ref => refs.push(ref)} visible={visible[4]} id={index[4]}>
               <Img img={images[4]}/>
               <SmallHeader>Featured</SmallHeader>
@@ -72,7 +72,8 @@ const Blog = () => {
               <P>Havana, Trinidad, Vinales</P>
               <Tags>#sea #sun #salsa #beach #cubalibre #mojito</Tags>
             </Card>
-          </>}
+          </>
+        }
       </CardGrid>
     </Container>
   )

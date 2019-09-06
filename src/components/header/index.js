@@ -26,7 +26,7 @@ const Header = () => {
 }
 
 const Container = styled.div`
-  height: 8vw;
+  height: 10vw;
   width: 100%;
   position: fixed;
   z-index: 3;
