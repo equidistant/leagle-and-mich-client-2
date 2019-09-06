@@ -102,7 +102,7 @@ const Header = styled.div`
 const CardGrid = styled.div`
   grid-row: 2 / 3;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
   grid-auto-rows: minmax(15rem, auto);
   grid-gap: 5vw;
 `

@@ -41,8 +41,8 @@ const Container = styled.div`
 `
 
 const Arrow = styled.div`
-  height: 5vw;
-  width: 5vw;
+  height: calc(2rem + 5vw);
+  width: calc(2rem + 5vw);
   background-position: center;
   background-size: cover;
   background-image: url(${props => props.img});

@@ -79,6 +79,12 @@ const Container = styled.button`
     opacity: 1;
     right: 0;
   `}
+  ${props => props.toggled && css`
+    ${Span}::before {
+      background-color: #F8A206;
+      width: 100%;
+    }
+  `}
 `
 
 const Hamburger = ({ toggle, hamburgerRef, ...rest }) =>

@@ -19,7 +19,7 @@ const Header = () => {
       <Logo show={show} offset={-(windowWidth/2 - logoWidth / 2 - 10)} ref={logoRef}/>
       <Link show={show} offset={windowWidth}>Ana's Portfolio</Link>
       <Link show={show} offset={windowWidth}>About Us</Link>
-      <Hamburger show={show} hamburgerRef={hamburgerRef} onClick={e => setToggled(!toggled)}/>
+      <Hamburger show={show} toggled={toggled} hamburgerRef={hamburgerRef} onClick={e => setToggled(!toggled)}/>
       <Background show={toggled} />
     </Container>
   )
