@@ -179,7 +179,6 @@ const Blogs = () => {
         <Text>
           <TextHeader1>Utorak 25.6.2019.</TextHeader1>
           Iako smo za zadnji dan planirali Bohinj i slap Savicu, odlučili smo to zbog dužine puta ostaviti za neku drugu priliku. Stoga smo se za kraj našeg uspješnog 6-dnevnog kampiranja odlučili počastiti kupanjem u ledenoj vodi velikih korita rijeke Soče. Iako smo znali da je hladno, kristalno čista voda i njena predivna smaragdna boja, bile su previše primamljive te smo odlučili dopustiti nogama da nam utrnu i preći vlastite granice. Nekoliko skokova, puno zaveslaja uzvodno, tek koji nizvodno i malo grijanja na suncu bilo je savršen kraj naše male avanture. Koja, kako se priča ima puni potencijal preći u tradiciju. Put smo nastavili kroz Ljubljanu, i kratko stajanje, tek toliko da nas postepeno vrati u civilizaciju.
-          Često poželimo ići u daleke i neobične krajeve, a zapravo nas baš tu, iza ugla, čekaju jedne od najljepših prirodnih ljepota ovoga planeta.
         </Text>
         <ImgContainer>
           <Img img={images[38]} right={true}/>
@@ -187,6 +186,9 @@ const Blogs = () => {
         </ImgContainer>
         <Img img={images[36]}/>
         <Img img={images[37]}/>
+        <Text>
+          Često poželimo ići u daleke i neobične krajeve, a zapravo nas baš tu, iza ugla, čekaju jedne od najljepših prirodnih ljepota ovoga planeta.
+        </Text>
       </TextCenterContainer>
       </TextContainer>
     </Container>
