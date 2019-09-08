@@ -6,6 +6,7 @@ const Img = styled.img.attrs(props => ({
   }))`
   background-size: cover;
   width: 100%;
+  height: auto;
   overflow: hidden;
   margin-right: ${props => props.right ? '0.5vw' : 0};
   margin-left: ${props => props.left ? '0.5vw' : 0};
