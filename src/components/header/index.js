@@ -21,12 +21,12 @@ const Header = ({ history }) => {
       <Link show={show} offset={windowWidth}>Ana's Portfolio</Link>
       <Link show={show} offset={windowWidth}>About Us</Link>
       <Hamburger show={show} toggled={toggled} hamburgerRef={hamburgerRef} onClick={e => setToggled(!toggled)}/>
-      <Background show={toggled} />
+      <Background show={toggled} setToggled={setToggled}/>
     </Container>
   )
 }
 
-const to = ({ history, url}) => {
+const to = ({ history, url, setToggled}) => {
   history.push(url)
   window.scrollTo(0,0)
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { withRouter } from 'react-router-dom'
 
 const Container = styled.div`
   position: absolute;
@@ -50,14 +51,20 @@ const Link = styled.div`
 //   color: red;
 // `
 
-const Background = ({ show }) =>
+const Background = ({ history, show, setToggled }) =>
   <Container show={show}>
     <Center>
-      <Link>Travel Blog</Link>
+      <Link onClick={e => to({ history, url: '/blog/15', setToggled})}>Travel Blog</Link>
       <Link>Travel Gallery</Link>
       <Link>Ana's portfolio</Link>
       <Link>About us</Link>
     </Center>
   </Container>
 
-export default Background
+const to = ({ history, url, setToggled}) => {
+  history.push(url)
+  window.scrollTo(0,0)
+  setToggled(false)
+}
+
+export default withRouter(Background)

@@ -41,6 +41,10 @@ const Blogs = () => {
     { id: 33, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/34.jpg` },
     { id: 34, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/35.jpg` },
     { id: 35, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/36.jpg` },
+    { id: 36, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/37.jpg` },
+    { id: 37, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/38.jpg` },
+    { id: 38, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/39.jpg` },
+    { id: 39, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/40.jpg` },
   ]
   return (
     <Container>
@@ -171,12 +175,18 @@ const Blogs = () => {
           <Img img={images[35]} right={true}/>
           <Img img={images[34]} left={true}/>
         </ImgContainer>
-        <Img img={images[32]} right={true}/>
+        <Img img={images[32]}/>
         <Text>
           <TextHeader1>Utorak 25.6.2019.</TextHeader1>
           Iako smo za zadnji dan planirali Bohinj i slap Savicu, odlučili smo to zbog dužine puta ostaviti za neku drugu priliku. Stoga smo se za kraj našeg uspješnog 6-dnevnog kampiranja odlučili počastiti kupanjem u ledenoj vodi velikih korita rijeke Soče. Iako smo znali da je hladno, kristalno čista voda i njena predivna smaragdna boja, bile su previše primamljive te smo odlučili dopustiti nogama da nam utrnu i preći vlastite granice. Nekoliko skokova, puno zaveslaja uzvodno, tek koji nizvodno i malo grijanja na suncu bilo je savršen kraj naše male avanture. Koja, kako se priča ima puni potencijal preći u tradiciju. Put smo nastavili kroz Ljubljanu, i kratko stajanje, tek toliko da nas postepeno vrati u civilizaciju.
           Često poželimo ići u daleke i neobične krajeve, a zapravo nas baš tu, iza ugla, čekaju jedne od najljepših prirodnih ljepota ovoga planeta.
         </Text>
+        <ImgContainer>
+          <Img img={images[38]} right={true}/>
+          <Img img={images[39]} left={true}/>
+        </ImgContainer>
+        <Img img={images[36]}/>
+        <Img img={images[37]}/>
       </TextCenterContainer>
       </TextContainer>
     </Container>
