@@ -4,7 +4,7 @@ import * as serviceWorker from './serviceWorker'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 import { GlobalStyle } from './style'
-import { Header, Home, Footer } from './components'
+import { Header, Home, Blogs, Footer } from './components'
 import { useTwoElemIntersection } from './effects'
 
 const App = () => {
@@ -14,6 +14,7 @@ const App = () => {
         <GlobalStyle />
         <Header/>
         <Route exact path='/' component={Home} />
+        <Route path='/blog/:id' component={Blogs} />
         <Footer />
       </>
     </BrowserRouter>

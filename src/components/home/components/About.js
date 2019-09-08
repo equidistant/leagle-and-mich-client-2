@@ -37,7 +37,6 @@ const Container = styled.div`
   grid-template-rows: min-content min-content;
   justify-items: center;
   align-items: center;
-  color: #884307;
   width: 100%;
   background-image: linear-gradient(-45deg, #EEF0F3 0%, #F6F5F3 100%);
   padding: calc(1rem + 2.5vw) 5vw 5vw 5vw;
@@ -69,6 +68,7 @@ const Text = styled.div`
   font-size: calc(0.8rem + 0.4vw);
   font-style: italic;
   width: calc(15rem + 10vw);
+  color: #884307;
 `
 const TextAna = styled(Text)`
 `
@@ -92,9 +92,10 @@ const Circle = styled.div`
 const Circles = styled.div`
   opacity: 0;
   display: flex;
+  justify-content: center;
   margin: 1vw;
   ${props => props.visible && css`
-    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 0.6s ease-in-out;
+    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 1s ease-in-out;
     animation-fill-mode: forwards;
   `}
 `

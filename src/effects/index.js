@@ -4,7 +4,7 @@ import axios from 'axios'
 import $ from 'jquery'
 
 export const useScrolled = function (boundary) {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(window.scrollY > boundary)
   useEffect(() => {
     const scrollListener = (e) => {
       setScrolled(window.scrollY > boundary)

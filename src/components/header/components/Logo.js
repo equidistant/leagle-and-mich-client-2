@@ -10,6 +10,9 @@ const Logo = styled.div`
   z-index: 5;
   height: 100%;
   width: calc(8rem + 5vw);
+  &:hover {
+    cursor: pointer;
+  }
   ${props => props.show && css`
     animation: ${props => slide({x1: 0, y1: 0, z1: 0, x2: props.offset, y2: 0, z2: 0})} 0.4s ease-in-out;
     animation-fill-mode: forwards;

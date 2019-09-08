@@ -80,7 +80,7 @@ const Container = styled.button`
   &:active {
     top: 2px;
   }
-  ${props => (props.show) && css`
+  ${props => props.show && css`
     opacity: 1;
     right: 0;
   `}

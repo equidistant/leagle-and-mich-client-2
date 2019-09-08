@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
-import { useScroll, useScrolled, useWindowWidth, useWidth, useElemProp } from '../../effects'
+import { withRouter } from 'react-router-dom'
+import { useScrolled, useWindowWidth, useWidth, useElemProp } from '../../effects'
 
 import { Link, Logo, Hamburger, Background } from './components'
 
-const Header = () => {
+const Header = ({ history }) => {
   const logoRef = useRef(null)
   const hamburgerRef = useRef(null)
   const [scrolled] = useScrolled(1)
@@ -14,15 +15,20 @@ const Header = () => {
   const show = scrolled || toggled || small
   return (
     <Container>
-      <Link show={show} offset={windowWidth}>Travel Blog</Link>
+      <Link show={show} offset={windowWidth} onClick={e => to({ history, url: '/blog/15'})}>Travel Blog</Link>
       <Link show={show} offset={windowWidth}>Travel Gallery</Link>
-      <Logo show={show} offset={-(windowWidth/2 - logoWidth / 2 - 10)} ref={logoRef}/>
+      <Logo show={show} offset={-(windowWidth/2 - logoWidth / 2)} ref={logoRef} onClick={e => to({ history, url: '/'})}/>
       <Link show={show} offset={windowWidth}>Ana's Portfolio</Link>
       <Link show={show} offset={windowWidth}>About Us</Link>
       <Hamburger show={show} toggled={toggled} hamburgerRef={hamburgerRef} onClick={e => setToggled(!toggled)}/>
       <Background show={toggled} />
     </Container>
   )
+}
+
+const to = ({ history, url}) => {
+  history.push(url)
+  window.scrollTo(0,0)
 }
 
 const Container = styled.div`
@@ -36,4 +42,4 @@ const Container = styled.div`
   margin-top: 1rem;
 `
 
-export default Header
+export default withRouter(Header)
