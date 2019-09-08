@@ -11,7 +11,6 @@ const Img = styled.img.attrs(props => ({
   margin-left: ${props => props.left ? '0.5vw' : 0};
   margin-top: 1vw;
   margin-bottom: 1vw;
-  transition: opacity 1.5s ease-in;
 `
 
 export default Img

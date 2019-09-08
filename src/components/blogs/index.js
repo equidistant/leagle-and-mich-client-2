@@ -186,7 +186,7 @@ const Blogs = () => {
         </ImgContainer>
         <Img img={images[36]}/>
         <Img img={images[37]}/>
-        <Text>
+        <Text style={{ fontStyle: 'oblique'}}>
           Često poželimo ići u daleke i neobične krajeve, a zapravo nas baš tu, iza ugla, čekaju jedne od najljepših prirodnih ljepota ovoga planeta.
         </Text>
       </TextCenterContainer>
@@ -215,7 +215,6 @@ const Header = styled.p`
 const TextContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr minmax(30rem, 50%) 1fr;
-  gird-template-rows: auto;
   justify-items: center;
   align-items: center;
   color: #303336;
@@ -241,6 +240,11 @@ const Text = styled.p`
   text-justify: inter-word;
 `
 
+const ImgContainer = styled.div`
+  display: flex;
+  width: 100%;
+`
+
 const TextHeader1 = styled.span`
   font-size: calc(1.4rem + 0.5vw);
   letter-spacing: 0.1vw;
@@ -262,11 +266,6 @@ const TextHeader2 = styled.span`
   font-family: 'Playfair Display';
   font-weight: 600;
   margin: calc(2.5vw);
-`
-
-const ImgContainer = styled.div`
-  display: flex;
-  height: min-content;
 `
 
 const StarBullet = styled.div`
