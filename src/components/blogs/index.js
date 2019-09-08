@@ -266,6 +266,7 @@ const TextHeader2 = styled.span`
 
 const ImgContainer = styled.div`
   display: flex;
+  height: min-content;
 `
 
 const StarBullet = styled.div`
