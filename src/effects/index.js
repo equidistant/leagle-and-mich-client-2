@@ -155,9 +155,9 @@ export const useThemeBlogs = function () {
   const [theme, setTheme] = useState(window.innerWidth < 800 ? Theme.blogs.medium : Theme.blogs.big)
   useEffect(() => {
     const resizeListener = (e) => {
-      if (window.innerWidth <= 600) {
+      if (window.innerWidth <= 800) {
         setTheme(Theme.blogs.small)
-      } else if (window.innerWidth > 600 && window.innerWidth < 800) {
+      } else if (window.innerWidth > 800 && window.innerWidth < 1200) {
         setTheme(Theme.blogs.medium)
       } else {
         setTheme(Theme.blogs.big)

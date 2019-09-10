@@ -7,11 +7,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   html {
     font-size: 62.5%;
-
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1000px) {
       font-size: 50%;
     }
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 600px) {
       font-size: 40%;
     }
   }
@@ -30,6 +29,13 @@ export const GlobalStyle = createGlobalStyle`
     background: #F8F9FA;
   }
 `
+
+// @media only screen and (max-width: 1200px) {
+//   font-size: 50%;
+// }
+// @media only screen and (max-width: 950px) {
+//   font-size: 40%;
+// }
 
 export const Theme = {
   blogs: {
