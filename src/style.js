@@ -46,19 +46,25 @@ export const Theme = {
       width: 100,
       padding: 1.5,
       margin: 2.5,
-      unit: 'rem'
+      unit: 'rem',
+      headerFontSize: 5,
+      headerLetterSpacing: 0.4,
     },
     medium: {
       width: 80,
       padding: 1,
       margin: 2,
-      unit: 'rem'
+      unit: 'rem',
+      headerFontSize: 4,
+      headerLetterSpacing: 0.3,
     },
     small: {
       width: 90,
       padding: 0.5,
       margin: 1,
-      unit: 'vw'
+      unit: 'vw',
+      headerFontSize: 3,
+      headerLetterSpacing: 0.2,
     }
   }
 }

@@ -392,11 +392,10 @@ const BlogCenterContainer = styled.div(({ width, padding, margin, unit }) => `
   box-shadow: 0 15px 35px rgba(50, 50, 90, .1), 0 5px 15px rgba(0, 0, 0, .07);
 `)
 
-const BlogHeader = styled.p(({ padding }) => `
+const BlogHeader = styled.p(({ padding, headerFontSize, headerLetterSpacing }) => `
   padding: ${padding}rem;
-
-  font-size: 5rem;
-  letter-spacing: 0.4rem;
+  font-size: ${headerFontSize}rem;
+  letter-spacing: ${headerLetterSpacing}rem;
   line-height: 2;
   font-family: 'Maple';
   width: max-content;
