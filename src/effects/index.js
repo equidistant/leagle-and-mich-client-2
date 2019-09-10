@@ -152,7 +152,7 @@ export const useElemProp = function ({ ref, propName }) {
 }
 
 export const useThemeBlogs = function () {
-  const [theme, setTheme] = useState(window.innerWidth < 800 ? Theme.blogs.medium : Theme.blogs.big)
+  const [theme, setTheme] = useState(chooseSize({ window }))
   useEffect(() => {
     const resizeListener = (e) => {
       if (window.innerWidth <= 800) {
@@ -168,6 +168,16 @@ export const useThemeBlogs = function () {
     return () => window.removeEventListener('resize', throttledResizeListener)
   }, [theme])
   return [theme]
+}
+
+const chooseSize = ({ window }) => {
+  if (window.innerWidth <= 800) {
+    return Theme.blogs.small
+  } else if (window.innerWidth > 800 && window.innerWidth < 1200) {
+    return Theme.blogs.medium
+  } else {
+    return Theme.blogs.big
+  }
 }
 // export const useImages = function ({ url }) {
 //   // const [ratios, setRatios] = useState([])
