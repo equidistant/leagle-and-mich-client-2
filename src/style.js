@@ -45,17 +45,20 @@ export const Theme = {
     big: {
       width: 100,
       padding: 1.5,
-      margin: 2.5
+      margin: 2.5,
+      unit: 'rem'
     },
     medium: {
       width: 80,
       padding: 1,
-      margin: 2
+      margin: 2,
+      unit: 'rem'
     },
     small: {
-      width: 60,
+      width: 90,
       padding: 0.5,
-      margin: 1
+      margin: 1,
+      unit: 'vw'
     }
   }
 }

@@ -376,8 +376,8 @@ const BlogContainer = styled.div`
   justify-items: center;
 `
 
-const BlogCenterContainer = styled.div(({ width, padding, margin }) => `
-  width: ${width + (padding * 4 + margin)}rem;
+const BlogCenterContainer = styled.div(({ width, padding, margin, unit }) => `
+  width: ${width + (padding * 4 + margin)}${unit};
   margin-top: ${margin}rem;
   margin-bottom: ${margin}rem;
   padding: ${padding}rem;
@@ -469,15 +469,15 @@ const ImgWrap = styled.div`
   position: relative;
 `
 
-const ImgWrapPortrait = styled.div(({ width }) => `
-  width: ${width / 2}rem;
-  height: ${width * 0.75}rem;
+const ImgWrapPortrait = styled.div(({ width, unit }) => `
+  width: ${width / 2}${unit};
+  height: ${width * 0.75}${unit};
   position: relative;
 `)
 
-const ImgWrapLandscape = styled.div(({ width }) => `
-  width: ${width / 2}rem;
-  height: ${width / 2 * 0.75}rem;
+const ImgWrapLandscape = styled.div(({ width, unit }) => `
+  width: ${width / 2}${unit};
+  height: ${width / 2 * 0.75}${unit};
   position: relative;
 `)
 
