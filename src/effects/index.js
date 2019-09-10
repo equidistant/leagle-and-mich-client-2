@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import _ from 'lodash'
 import axios from 'axios'
 import $ from 'jquery'
+import { Theme } from '../style.js'
 
 export const useScrolled = function (boundary) {
   const [scrolled, setScrolled] = useState(window.scrollY > boundary)
@@ -148,6 +149,25 @@ export const useElemProp = function ({ ref, propName }) {
     setProp(ref.current[propName])
   })
   return [prop]
+}
+
+export const useThemeBlogs = function () {
+  const [theme, setTheme] = useState(window.innerWidth < 800 ? Theme.blogs.medium : Theme.blogs.big)
+  useEffect(() => {
+    const resizeListener = (e) => {
+      if (window.innerWidth <= 600) {
+        setTheme(Theme.blogs.small)
+      } else if (window.innerWidth > 600 && window.innerWidth < 800) {
+        setTheme(Theme.blogs.medium)
+      } else {
+        setTheme(Theme.blogs.big)
+      }
+    }
+    const throttledResizeListener = _.throttle(resizeListener, 100, { leading: true, trailing: true})
+    window.addEventListener('resize', throttledResizeListener)
+    return () => window.removeEventListener('resize', throttledResizeListener)
+  }, [theme])
+  return [theme]
 }
 // export const useImages = function ({ url }) {
 //   // const [ratios, setRatios] = useState([])

@@ -1,12 +1,19 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Serif+Pro|Bubbler+One|Nothing+You+Could+Do|Open+Sans:700|Playfair+Display');
+  @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Serif+Pro|Bubbler+One|Nothing+You+Could+Do|Open+Sans:700|Playfair+Display|Work+Sans|Maple');
   html, body, #root {
     height: 100%;
   }
   html {
     font-size: 62.5%;
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 50%;
+    }
+    @media only screen and (max-width: 950px) {
+      font-size: 40%;
+    }
   }
   *, *::after, *::before {
     margin: 0;
@@ -23,3 +30,26 @@ export const GlobalStyle = createGlobalStyle`
     background: #F8F9FA;
   }
 `
+
+export const Theme = {
+  blogs: {
+    biggest: {
+      margin: 5
+    },
+    big: {
+      width: 100,
+      padding: 1.5,
+      margin: 2.5
+    },
+    medium: {
+      width: 80,
+      padding: 1,
+      margin: 2
+    },
+    small: {
+      width: 60,
+      padding: 0.5,
+      margin: 1
+    }
+  }
+}
