@@ -7,12 +7,16 @@ export const GlobalStyle = createGlobalStyle`
   }
   html {
     font-size: 62.5%;
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1300px) {
+      font-size: 56.25%;
+    }
+    @media only screen and (max-width: 700px) {
       font-size: 50%;
     }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 450px) {
       font-size: 40%;
     }
+
   }
   *, *::after, *::before {
     margin: 0;
@@ -30,6 +34,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
+// @media only screen and (max-width: 1000px) {
+//   font-size: 50%;
+// }
+// @media only screen and (max-width: 600px) {
+//   font-size: 40%;
+// }
+
+
 // @media only screen and (max-width: 1200px) {
 //   font-size: 50%;
 // }
@@ -37,34 +49,96 @@ export const GlobalStyle = createGlobalStyle`
 //   font-size: 40%;
 // }
 
+const general = {
+  main: {
+    marginVertical: 5 // rem
+  },
+  header1: {
+    fontSize: 5, //rem
+    letterSpacing: 0.5, //rem
+  },
+  header2: {
+    fontSize: 3.5, //rem
+    letterSpacing: 0.4, //rem
+  },
+  header3: {
+    fontSize: 2.5, //rem
+    letterSpacing: 0.3, //rem
+  },
+  fontSize: 2, // rem
+  letterSpacing: 0.2, //rem
+  padding: 2,
+  margin: 2 //rem,
+}
+
 export const Theme = {
   blogs: {
-    biggest: {
-      margin: 5
-    },
     big: {
-      width: 100,
-      padding: 1.5,
-      margin: 2.5,
-      unit: 'rem',
-      headerFontSize: 5,
-      headerLetterSpacing: 0.4,
+      // main
+      main: {
+        width: '100rem',
+        marginVertical: `${general.main.marginVertical}rem`
+      },
+      header1: {
+        fontSize: `${general.header1.fontSize}rem`,
+        letterSpacing: `${general.header1.letterSpacing}rem`,
+      },
+      header2: {
+        fontSize: `${general.header2.fontSize}rem`,
+        letterSpacing: `${general.header2.letterSpacing}rem`,
+      },
+      header3: {
+        fontSize: `${general.header3.fontSize}rem`,
+        letterSpacing: `${general.header3.letterSpacing}rem`,
+      },
+      fontSize: `${general.fontSize}rem`,
+      letterSpacing: `${general.letterSpacing}rem`,
+      padding: `${general.padding}rem`,
+      margin: `${general.margin}rem`,
     },
     medium: {
-      width: 80,
-      padding: 1,
-      margin: 2,
-      unit: 'rem',
-      headerFontSize: 4,
-      headerLetterSpacing: 0.3,
+      main: {
+        width: '80rem',
+        marginVertical: `${general.main.marginVertical * 0.85}rem`
+      },
+      header1: {
+        fontSize: `${general.header1.fontSize * 0.85}rem`,
+        letterSpacing: `${general.header1.letterSpacing * 0.85}rem`,
+      },
+      header2: {
+        fontSize: `${general.header2.fontSize * 0.85}rem`,
+        letterSpacing: `${general.header2.letterSpacing * 0.85}rem`,
+      },
+      header3: {
+        fontSize: `${general.header3.fontSize * 0.85}rem`,
+        letterSpacing: `${general.header3.letterSpacing * 0.85}rem`,
+      },
+      fontSize: `${general.fontSize * 0.85}rem`,
+      letterSpacing: `${general.letterSpacing * 0.85}rem`,
+      padding: `${general.padding * 0.85}rem`,
+      margin: `${general.margin * 0.85}rem`,
     },
     small: {
-      width: 90,
-      padding: 0.5,
-      margin: 1,
-      unit: 'vw',
-      headerFontSize: 3,
-      headerLetterSpacing: 0.2,
+      main: {
+        width: '100%',
+        marginVertical: 0
+      },
+      header1: {
+        fontSize: `${general.header1.fontSize * 0.65}rem`,
+        letterSpacing: `${general.header1.letterSpacing * 0.65}rem`,
+      },
+      header2: {
+        fontSize: `${general.header2.fontSize * 0.65}rem`,
+        letterSpacing: `${general.header2.letterSpacing * 0.65}rem`,
+      },
+      header3: {
+        fontSize: `${general.header3.fontSize * 0.65}rem`,
+        letterSpacing: `${general.header3.letterSpacing * 0.65}rem`,
+      },
+      fontSize: `${general.fontSize * 0.85}rem`,
+      letterSpacing: `${general.letterSpacing * 0.65}rem`,
+      padding: `${general.padding * 0.65}rem`,
+      margin: `${general.margin * 0.65}rem`
     }
   }
 }

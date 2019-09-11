@@ -151,17 +151,11 @@ export const useElemProp = function ({ ref, propName }) {
   return [prop]
 }
 
-export const useThemeBlogs = function () {
-  const [theme, setTheme] = useState(chooseSize({ window }))
+export const useTheme = function ({ name, boundaries }) {
+  const [theme, setTheme] = useState(chooseSize({ window, theme: Theme.blogs, boundaries }))
   useEffect(() => {
     const resizeListener = (e) => {
-      if (window.innerWidth <= 800) {
-        setTheme(Theme.blogs.small)
-      } else if (window.innerWidth > 800 && window.innerWidth < 1200) {
-        setTheme(Theme.blogs.medium)
-      } else {
-        setTheme(Theme.blogs.big)
-      }
+      setTheme(chooseSize({ window, theme: Theme.blogs, boundaries}))
     }
     const throttledResizeListener = _.throttle(resizeListener, 100, { leading: true, trailing: true})
     window.addEventListener('resize', throttledResizeListener)
@@ -170,13 +164,13 @@ export const useThemeBlogs = function () {
   return [theme]
 }
 
-const chooseSize = ({ window }) => {
-  if (window.innerWidth <= 800) {
-    return Theme.blogs.small
-  } else if (window.innerWidth > 800 && window.innerWidth < 1200) {
-    return Theme.blogs.medium
+const chooseSize = ({ window, theme, boundaries }) => {
+  if (window.innerWidth <= boundaries[0]) {
+    return theme.small
+  } else if (window.innerWidth > boundaries[0] && window.innerWidth < boundaries[1]) {
+    return theme.medium
   } else {
-    return Theme.blogs.big
+    return theme.big
   }
 }
 // export const useImages = function ({ url }) {
