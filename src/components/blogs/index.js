@@ -361,6 +361,7 @@ const BlogContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-items: center;
+  max-width: 100%;
 `
 
 const BlogCenterContainer = styled.div(({ main: { width, marginVertical }, padding }) => `
@@ -511,7 +512,7 @@ const ImgOverlay = styled.div(({ letterSpacing, fontSize, padding }) => `
   font-style: italic;
   font-size: ${fontSize};
   letter-spacing: ${letterSpacing};
-  color: #AA9776;
+  color: #B09978;
   display: flex;
   justify-content: flex-end;
   padding: ${padding};
