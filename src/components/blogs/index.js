@@ -361,7 +361,7 @@ const BlogContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  max-width: 100%;
+    max-width: 100%;
 `
 
 const BlogCenterContainer = styled.div(({ main: { width, marginVertical }, padding }) => `

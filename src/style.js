@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     letter-spacing: .2rem;
     // background: #2B2B2B;
     background: #F8F9FA;
+    overflow-x: hidden;
   }
 `
 
