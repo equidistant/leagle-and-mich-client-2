@@ -13,10 +13,6 @@ export const GlobalStyle = createGlobalStyle`
     @media only screen and (max-width: 700px) {
       font-size: 50%;
     }
-    @media only screen and (max-width: 450px) {
-      font-size: 40%;
-    }
-
   }
   *, *::after, *::before {
     margin: 0;
