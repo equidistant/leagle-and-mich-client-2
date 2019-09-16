@@ -8,7 +8,8 @@ export const Header1 = styled.p(({ header1: { fontSize, letterSpacing }, padding
   letter-spacing: ${letterSpacing};
   line-height: 2;
   font-family: 'Maple';
-  width: max-content;
+  width: 90%;
+  text-align: center;
 `)
 
 

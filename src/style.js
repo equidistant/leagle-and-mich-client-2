@@ -13,6 +13,9 @@ export const GlobalStyle = createGlobalStyle`
     @media only screen and (max-width: 700px) {
       font-size: 50%;
     }
+    @media only screen and (max-width: 340px) {
+      font-size: 45%;
+    }
   }
   *, *::after, *::before {
     margin: 0;
@@ -199,8 +202,8 @@ export const Theme = {
         marginVertical: 0
       },
       header1: {
-        fontSize: `${general.blogs.header1.fontSize * 0.5}rem`,
-        letterSpacing: `${general.blogs.header1.letterSpacing * 0.5}rem`,
+        fontSize: `${general.blogs.header1.fontSize * 0.65}rem`,
+        letterSpacing: `${general.blogs.header1.letterSpacing * 0.65}rem`,
       },
       header2: {
         fontSize: `${general.blogs.header2.fontSize * 0.65}rem`,
