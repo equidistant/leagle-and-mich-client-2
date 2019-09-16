@@ -21,7 +21,6 @@ const Logo = styled.div`
     animation: ${props => slide({x1: props.offset, y1: 0, z1: 0, x2: 0, y2: 0, z2: 0})} 0.4s ease-in-out;
     animation-fill-mode: forwards;
   `}
-  user-select: none;
 `
 
 export default Logo

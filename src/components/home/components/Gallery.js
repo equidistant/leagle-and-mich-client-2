@@ -65,7 +65,6 @@ const Container = styled.div`
   align-items: center;
   color: #303336;
   width: 100%;
-  padding: calc(1rem + 2.5vw) 5vw 5vw 5vw;
 `
 
 const Header = styled.p`
