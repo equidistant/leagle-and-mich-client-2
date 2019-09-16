@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 
 const Container = styled.div`
   position: absolute;
-  top: -10px;
+  top: 0;
   width: 100%;
   height: 100vh;
   background-color: #24272E;

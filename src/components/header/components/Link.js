@@ -5,7 +5,8 @@ import { slide, slideFrom } from '../../../animations'
 
 const Link = styled.div`
   color: white;
-  font-size: calc(1rem + 0.7vw);
+  font-size: ${props => props.fontSize};
+  letter-spacing: ${props => props.letterSpacing};
   width: max-width;
   font-family: 'Bubbler One';
   text-transform: uppercase;

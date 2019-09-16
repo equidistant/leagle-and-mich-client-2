@@ -8,8 +8,8 @@ const Logo = styled.div`
   background-size: cover;
   background-image: url(${LogoHeader});
   z-index: 5;
-  height: 100%;
-  width: calc(8rem + 5vw);
+  width: ${props => props.logo.width};
+  height: ${props => props.logo.width};
   &:hover {
     cursor: pointer;
   }
