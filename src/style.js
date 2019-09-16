@@ -67,7 +67,7 @@ const general = {
     },
     imgOverlay: {
       padding: 0.5, // rem
-      fontSize: 1.8, // rem,
+      fontSize: 2, // rem,
       letterSpacing: 0.2 //rem
     },
     starBullet: {
