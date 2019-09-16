@@ -90,6 +90,7 @@ const Container = styled.button`
       width: 100%;
     }
   `}
+  user-select: none;
 `
 
 const Hamburger = ({ toggled, hamburgerRef, hamburger: { span: { width: spanWidth, height: spanHeight}, width}, ...rest}) =>
