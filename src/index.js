@@ -14,8 +14,8 @@ const App = () => {
         <>
           <GlobalStyle />
           <Header/>
-          <Route exact path='/' component={() => <Home theme={Theme}/>} />
-          <Route path='/blog/:id' component={() => <Blogs theme={Theme.blogs}/>} />
+          <Route exact path='/' component={Home} />
+          <Route path='/blogs' component={Blogs} />
           <Footer />
         </>
       </BrowserRouter>

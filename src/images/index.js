@@ -10,6 +10,15 @@ import Mislav2 from './mislav2.jpg'
 import Mislav3 from './mislav3.jpg'
 import Ana from './ana.jpg'
 
+const SlideshowImages = [
+  { id: 0, src: `${process.env.REACT_APP_SERVER}/images/slideshow/1.jpg` },
+  { id: 1, src: `${process.env.REACT_APP_SERVER}/images/slideshow/2.jpg` },
+  { id: 2, src: `${process.env.REACT_APP_SERVER}/images/slideshow/3.jpg` },
+  { id: 3, src: `${process.env.REACT_APP_SERVER}/images/slideshow/4.jpg` },
+  { id: 4, src: `${process.env.REACT_APP_SERVER}/images/slideshow/5.jpg` },
+  { id: 5, src: `${process.env.REACT_APP_SERVER}/images/slideshow/6.jpg` },
+]
+
 const SocaImages = [
   { id: 0, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/1.jpg` },
   { id: 1, src: `${process.env.REACT_APP_SERVER}/images/travels/soca/2.jpg` },
@@ -54,5 +63,5 @@ const SocaImages = [
 ]
 
 export {
-  LogoHeader, Bed, Map, Star, Previous, Next, Mislav, Mislav3, Ana, SocaImages
+  LogoHeader, Bed, Map, Star, Previous, Next, Mislav, Mislav3, Ana, SocaImages, SlideshowImages
 }

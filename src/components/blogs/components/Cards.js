@@ -6,19 +6,20 @@ import { useIntersection, useWindowWidth } from '../../../effects'
 import { Map, Bed, SocaImages, SlideshowImages } from '../../../images'
 import { slideUp, slideRightFixed, slideLeftFixed, slideUpLittle } from '../../../animations'
 
-const Blog = ({ history }) => {
+const Cards = ({ history }) => {
   let refs = []
   const index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
   const [visible] = useIntersection({ elements: refs, threshold: 0.2 })
   const [{ windowWidth, small }] = useWindowWidth(800)
+
   return (
     <Container>
-      <Header>Latest Travel Blogs</Header>
+      <Header>Our Travel Blogs</Header>
       <CardGrid>
         <Card ref={ref => refs.push(ref)} visible={visible[0]} id={index[0]} onClick={e => to({ history, url: '/blogs/soca'})}>
           <Img img={SocaImages[4]}/>
           <SmallHeader>Featured</SmallHeader>
-          <BigHeader>Soca Valley</BigHeader>
+          <BigHeader>Soča Valley</BigHeader>
           <Line/>
           <P>Soca, Slovenia</P>
           <Tags>#roadtrip #camping #river #kayak #rafting #sup</Tags>
@@ -254,10 +255,10 @@ const Card = styled.div`
 
 `
 
-
 const to = ({ history, url}) => {
   history.push(url)
   window.scrollTo(0,0)
 }
 
-export default withRouter(Blog)
+
+export default withRouter(Cards)

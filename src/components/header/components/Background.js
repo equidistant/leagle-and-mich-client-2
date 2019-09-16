@@ -54,7 +54,7 @@ const Link = styled.div`
 const Background = ({ history, show, setToggled }) =>
   <Container show={show}>
     <Center>
-      <Link onClick={e => to({ history, url: '/blog/15', setToggled})}>Travel Blog</Link>
+      <Link onClick={e => to({ history, url: '/blogs', setToggled})}>Travel Blog</Link>
       <Link>Travel Gallery</Link>
       <Link>Ana's portfolio</Link>
       <Link>About us</Link>

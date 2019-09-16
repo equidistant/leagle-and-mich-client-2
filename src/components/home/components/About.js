@@ -23,7 +23,7 @@ const About = () => {
         <Circle img={Mislav} />
         <TextMislav>
           <TextHeader>Ana o Mislavu</TextHeader>
-          "Voli putovanja, fotografiju i sladoled."
+          "Voli SF-ove, vježbanje i čips."
         </TextMislav>
       </Circles>
     </Container>
