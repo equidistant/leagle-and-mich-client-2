@@ -126,7 +126,7 @@ export const Theme = {
         width: `${general.header.hamburger.width * 0.6}rem`,
       },
       height: `${general.header.height * 0.6}rem`,
-      fontSize: `${general.header.fontSize * 0.5}rem`,
+      fontSize: `${general.header.fontSize * 0.6}rem`,
       letterSpacing: `${general.header.letterSpacing * 0.5}rem`,
     }
   },
