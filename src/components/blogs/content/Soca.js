@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Star, SocaImages } from '../../../images'
-import { useTheme } from '../../../effects'
+import { useTheme2 } from '../../../effects'
 import { OuterContainer, CenterContainer,
    Header1, Header2, Header3, TextIntro, Text, BulletHeaderContainer, StarBullet,
    HeaderImg, ImgRow, ImgWrap, ImgOverlay, ImgPortraitHalf, ImgWrapPortrait, ImgLandscapeHalf, ImgWrapLandscape, ImgWrapPortraitLeft, ImgWrapLandscapeLeft, Img} from '../components'
-
+import themeSizes from '../theme'
 
 const Blogs = () => {
-  const [theme] = useTheme({ name: 'blogs', boundaries: [800, 1100]})
+  const [theme] = useTheme2({ theme: themeSizes, boundaries: [800, 1100]})
   const images = SocaImages
   return (
     <Container>

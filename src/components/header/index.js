@@ -18,7 +18,7 @@ const Header = ({ history }) => {
     <Container {...theme}>
       <Link show={show} offset={windowWidth} onClick={e => to({ history, url: '/blogs'})} {...theme}>Travel Blogs</Link>
       <Link show={show} offset={windowWidth} {...theme}>Travel Gallery</Link>
-      <Logo show={show} offset={-(windowWidth/2 - logoWidth / 2)} ref={logoRef} onClick={e => to({ history, url: '/'})} {...theme}/>
+      <Logo show={show} offset={-(windowWidth/2 - logoWidth / 2)} ref={logoRef} onClick={e => to({ history, url: '/', setToggled, toggled})} {...theme}/>
       <Link show={show} offset={windowWidth} {...theme}>Ana's Portfolio</Link>
       <Link show={show} offset={windowWidth} {...theme}>About Us</Link>
       <Hamburger show={show} toggled={toggled} hamburgerRef={hamburgerRef} onClick={e => setToggled(!toggled)} {...theme}/>
@@ -27,9 +27,12 @@ const Header = ({ history }) => {
   )
 }
 
-const to = ({ history, url, setToggled}) => {
+const to = ({ history, url, setToggled, toggled}) => {
   history.push(url)
   window.scrollTo(0,0)
+  if (toggled) {
+    setToggled(!toggled)
+  }
 }
 
 const Container = styled.div(({ height }) => `

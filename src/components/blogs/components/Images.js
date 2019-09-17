@@ -12,9 +12,9 @@ export const HeaderImg = styled.img.attrs(props => ({
   overflow: hidden;
 `
 
-export const ImgRow = styled.div(({ padding }) => `
+export const ImgRow = styled.div(({ paddingBig }) => `
   display: flex;
-  padding: ${padding};
+  padding: ${paddingBig};
 `)
 
 export const ImgWrap = styled.div`
@@ -23,13 +23,13 @@ export const ImgWrap = styled.div`
   position: relative;
 `
 
-export const ImgWrapPortrait = styled.div(({ width }) => `
+export const ImgWrapPortrait = styled.div(() => `
   width: 50%;
   height: auto;
   position: relative;
 `)
 
-export const ImgWrapLandscape = styled.div(({ width }) => `
+export const ImgWrapLandscape = styled.div(() => `
   width: 50%;
   height: auto;
   position: relative;
