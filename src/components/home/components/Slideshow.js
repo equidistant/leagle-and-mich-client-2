@@ -1,27 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useSlide } from '../../../effects'
-import { Previous, Next } from '../../../images'
+import { useSlide, useTheme2 } from '../../../effects'
+import { Previous, Next, SlideshowImages } from '../../../images'
+import themeSizes from '../theme'
 
 const Slideshow = ({ slideshowRef }) => {
+  const [theme] = useTheme2({ theme: themeSizes, boundaries: [800, 1100]})
   const imagesCount = 5
   const [activeId, setActiveId] = useSlide(imagesCount)
-  const images = [
-    { id: 0, src: `${process.env.REACT_APP_SERVER}/images/slideshow/1.jpg` },
-    { id: 1, src: `${process.env.REACT_APP_SERVER}/images/slideshow/2.jpg` },
-    { id: 2, src: `${process.env.REACT_APP_SERVER}/images/slideshow/3.jpg` },
-    { id: 3, src: `${process.env.REACT_APP_SERVER}/images/slideshow/4.jpg` },
-    { id: 4, src: `${process.env.REACT_APP_SERVER}/images/slideshow/5.jpg` }
-  ]
   return (
-    <Container>
-      <PreviousArrow img={Previous} onClick={e => setActiveId((activeId - 1 + imagesCount) % imagesCount)}/>
-      <Img img={images[0]} activeId={activeId}/>
-      <Img img={images[1]} activeId={activeId}/>
-      <Img img={images[2]} activeId={activeId}/>
-      <Img img={images[3]} activeId={activeId}/>
-      <Img img={images[4]} activeId={activeId}/>
-      <NextArrow img={Next} onClick={e => setActiveId((activeId + 1) % imagesCount)}  />
+    <Container {...theme}>
+      <PreviousArrow img={Previous} onClick={e => setActiveId((activeId - 1 + imagesCount) % imagesCount)} {...theme}/>
+      <Img img={SlideshowImages[0]} activeId={activeId}/>
+      <Img img={SlideshowImages[1]} activeId={activeId}/>
+      <Img img={SlideshowImages[2]} activeId={activeId}/>
+      <Img img={SlideshowImages[3]} activeId={activeId}/>
+      <Img img={SlideshowImages[4]} activeId={activeId}/>
+      <NextArrow img={Next} onClick={e => setActiveId((activeId + 1) % imagesCount)}  {...theme}/>
     </Container>
   )
 }
@@ -34,15 +29,14 @@ const Container = styled.div`
   max-height: 100vh;
   max-width: 100%;
   overflow: hidden;
-
   display: grid;
   gird-template-columns: 1fr 100% 1fr;
   grid-template-rows: 1fr min-content 1fr;
 `
 
 const Arrow = styled.div`
-  height: calc(2rem + 5vw);
-  width: calc(2rem + 5vw);
+  height: ${props => props.arrow.height};
+  width: ${props => props.arrow.width};
   background-position: center;
   background-size: cover;
   background-image: url(${props => props.img});

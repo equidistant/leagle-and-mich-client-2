@@ -17,6 +17,8 @@ const SlideshowImages = [
   { id: 3, src: `${process.env.REACT_APP_SERVER}/images/slideshow/4.jpg` },
   { id: 4, src: `${process.env.REACT_APP_SERVER}/images/slideshow/5.jpg` },
   { id: 5, src: `${process.env.REACT_APP_SERVER}/images/slideshow/6.jpg` },
+  { id: 6, src: `${process.env.REACT_APP_SERVER}/images/slideshow/7.jpg` },
+  { id: 7, src: `${process.env.REACT_APP_SERVER}/images/slideshow/8.jpg` },
 ]
 
 const SocaImages = [

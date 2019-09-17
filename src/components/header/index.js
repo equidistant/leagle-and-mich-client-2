@@ -16,7 +16,7 @@ const Header = ({ history }) => {
   const show = scrolled || toggled || small
   return (
     <Container {...theme}>
-      <Link show={show} offset={windowWidth} onClick={e => to({ history, url: '/blogs'})} {...theme}>Travel Blog</Link>
+      <Link show={show} offset={windowWidth} onClick={e => to({ history, url: '/blogs'})} {...theme}>Travel Blogs</Link>
       <Link show={show} offset={windowWidth} {...theme}>Travel Gallery</Link>
       <Logo show={show} offset={-(windowWidth/2 - logoWidth / 2)} ref={logoRef} onClick={e => to({ history, url: '/'})} {...theme}/>
       <Link show={show} offset={windowWidth} {...theme}>Ana's Portfolio</Link>

@@ -1,6 +1,6 @@
 import Slideshow from './Slideshow'
-import Blog from './Blog'
+import Cards from './Cards'
 import Gallery from './Gallery'
 import About from './About'
 
-export { Slideshow, Blog, Gallery, About }
+export { Slideshow, Cards, Gallery, About }

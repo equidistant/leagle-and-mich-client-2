@@ -7,7 +7,7 @@ import { Map, Bed, SlideshowImages } from '../../../images'
 import { slideUp, slideRightFixed, slideLeftFixed, slideUpLittle } from '../../../animations'
 import themeSizes from '../theme'
 
-const Cards = ({ history }) => {
+const Blogs = ({ history }) => {
   const [theme] = useTheme2({ theme: themeSizes, boundaries: [800, 1100]})
   let refs = []
   const index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -196,4 +196,4 @@ const to = ({ history, url}) => {
   window.scrollTo(0,0)
 }
 
-export default withRouter(Cards)
+export default withRouter(Blogs)

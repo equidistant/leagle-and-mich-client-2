@@ -2,102 +2,105 @@ import React, { useRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { slideAppear, appear } from '../../../animations'
-import { useIntersection, useWindowWidth } from '../../../effects'
+import { useIntersection, useWindowWidth, useTheme2 } from '../../../effects'
 import { Mislav, Ana } from '../../../images'
+import themeSizes from '../theme'
 
 const About = () => {
+  const [theme] = useTheme2({ theme: themeSizes, boundaries: [800, 1100]})
   const refs = [useRef(null), useRef(null)]
   const [visible] = useIntersection({ elements: refs, threshold: 0.1 })
   const [{ windowWidth, small }] = useWindowWidth(800)
   return (
-    <Container>
-      <Header>About Us</Header>
-      <Circles visible={visible[0]} ref={refs[0]} id={0}>
-        <TextAna>
-          <TextHeader>Mislav o Ani</TextHeader>
-          "Voli putovanja, fotografiju i sladoled."
-        </TextAna>
-        <Circle img={Ana} />
-      </Circles>
-      <Circles visible={visible[1]} ref={refs[1]} id={1}>
-        <Circle img={Mislav} />
-        <TextMislav>
-          <TextHeader>Ana o Mislavu</TextHeader>
-          "Voli SF-ove, vježbanje i čips."
-        </TextMislav>
-      </Circles>
+    <Container {...theme}>
+      <Header1 {...theme}>About Us</Header1>
+      <RowContainer visible={visible[0]} ref={refs[0]} id={0} {...theme}>
+        <TextContainer {...theme}>
+          <Header2 {...theme}>Mislav o Ani</Header2>
+          <Header3 {...theme}>"Voli sunce, fotografiju i sladoled."</Header3>
+        </TextContainer>
+        <Circle img={Ana} {...theme}/>
+      </RowContainer>
+      <RowContainer visible={visible[1]} ref={refs[1]} id={1} {...theme}>
+        <Circle img={Mislav} {...theme}/>
+        <TextContainer {...theme}>
+          <Header2 {...theme}>Ana o Mislavu</Header2>
+          <Header3 {...theme}>"Voli hlad, vježbanje i čips."</Header3>
+        </TextContainer>
+      </RowContainer>
     </Container>
   )
 }
 
         // <Circle visible={visible[1]} offset={windowWidth / 2} ref={refs[1]} id={1}/>
 
-const Container = styled.div`
+const Container = styled.div(({ paddingBig }) => `
   display: grid;
   grid-template-rows: min-content min-content;
   justify-items: center;
   align-items: center;
   width: 100%;
   background-image: linear-gradient(-45deg, #EEF0F3 0%, #F6F5F3 100%);
-  padding: calc(1rem + 2.5vw) 5vw 5vw 5vw;
-`
+  padding: ${paddingBig};
+`)
 
-const Header = styled.div`
-  font-size: calc(2rem + 1.5vw);
-  letter-spacing: 0.1vw;
+const Header1 = styled.div(({ header1: { fontSize, letterSpacing }, marginBig, paddingBig }) => `
+  font-size: ${fontSize};
+  letter-spacing: ${letterSpacing};
+  margin-top: ${marginBig};
+  padding: ${paddingBig};
+
   line-height: 1.2;
   font-family: 'Playfair Display';
-  margin-bottom: calc(1rem + 2.5vw);
+  width: 90%;
+  text-align: center;
+`)
+
+const Header2 = styled.div(({ header2: { fontSize, letterSpacing }, marginSmall, paddingBig }) => `
+  margin-top: ${marginSmall};
+  font-size: ${fontSize};
+  letter-spacing: ${letterSpacing};
+  color: #303336;
+  font-family: 'Playfair Display';
+  padding: ${paddingBig};
+`)
+
+const Header3 = styled.div(({ header3: { fontSize, letterSpacing }, paddingBig}) => `
+  font-size: ${fontSize};
+  letter-spacing: ${letterSpacing};
+  font-family: $serif;
+  padding: ${paddingBig};
+`)
+
+const RowContainer = styled.div`
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: ${props => props.paddingBig};
+  ${props => props.visible && css`
+    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 0.7s ease-in-out;
+    animation-fill-mode: forwards;
+  `}
 `
 
-const TextHeader = styled.div`
-  font-weight: 700;
-  font-size: calc(1rem + 0.4vw);
-  margin: 1rem;
-`
-
-const Text = styled.div`
+const TextContainer = styled.div(({ paddingBig }) => `
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 10px;
-  margin: 1vw;
-  padding: 1vw;
-  font-size: calc(0.8rem + 0.4vw);
-  font-style: italic;
-  width: calc(15rem + 10vw);
-  color: #884307;
-`
-const TextAna = styled(Text)`
-`
+  padding: ${paddingBig};
+`)
 
-const TextMislav = styled(Text)`
-`
-
-// animation: ${appear} 1s ease-in-out;
-// animation-fill-mode: forwards;
-const Circle = styled.div`
+const Circle = styled.div(({ img, circle: { width, height }, marginSmall }) => `
   border-radius: 50%;
-  width: calc(4rem + 8vw);
-  height: calc(4rem + 8vw);
+  width: ${width};
+  height: ${height};
   background-position: center;
   background-size: cover;
-  background-image: url(${props => props.img});
-  margin: 1vw;
-`
-
-    // animation: ${props => slideAppear({x1: props.offset, y1: 0, z1: 0, x2: 0, y2: 0, z2: 0})} 1s ease-in-out;
-const Circles = styled.div`
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  margin: 1vw;
-  ${props => props.visible && css`
-    animation:  ${props => slideAppear({x1: 0, y1: 100, z1: 0, x2: 0, y2: 0, z2: 0})} 1s ease-in-out;
-    animation-fill-mode: forwards;
-  `}
-`
+  background-image: url(${img});
+  margin: ${marginSmall};
+`)
 
 export default About

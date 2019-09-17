@@ -151,6 +151,19 @@ export const useElemProp = function ({ ref, propName }) {
   return [prop]
 }
 
+export const useTheme2 = function ({ theme, boundaries }) {
+  const [currentTheme, setCurrentTheme] = useState(chooseSize({ window, theme, boundaries }))
+  useEffect(() => {
+    const resizeListener = (e) => {
+      setCurrentTheme(chooseSize({ window, theme, boundaries}))
+    }
+    const throttledResizeListener = _.throttle(resizeListener, 100, { leading: true, trailing: true})
+    window.addEventListener('resize', throttledResizeListener)
+    return () => window.removeEventListener('resize', throttledResizeListener)
+  }, [currentTheme])
+  return [currentTheme]
+}
+
 export const useTheme = function ({ name, boundaries }) {
   const [theme, setTheme] = useState(chooseSize({ window, theme: Theme[name], boundaries }))
   useEffect(() => {

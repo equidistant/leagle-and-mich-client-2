@@ -2,20 +2,22 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled, { css } from 'styled-components'
 import justifiedLayout from 'justified-layout'
-
 import $ from 'jquery'
+import themeSizes from '../theme'
+
 window.jQuery = $
 window.$ = $
 
 class Gallery extends Component {
   state = {
-    images: []
+    images: [],
+    theme: chooseSize({ window, theme: themeSizes, boundaries: [800, 1100]})
   }
   render () {
     return (
-      <Container>
-        <Header>Travel Gallery</Header>
-        <GalleryContainer>
+      <Container {...this.state.theme}>
+        <Header1 {...this.state.theme}>Travel Gallery</Header1>
+        <GalleryContainer {...this.state.theme}>
           {this.state.images && this.state.images.length !== 0 && this.renderImages(this.state.images)}
         </GalleryContainer>
       </Container>
@@ -27,18 +29,22 @@ class Gallery extends Component {
     const images = getImages({ url: '/travels/soca', length: ratios.data.length })
     this.setState({ images })
     const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
-    window.addEventListener('resize', this.resizeListener)
+    window.addEventListener('resize', this.resizeListener.bind(this))
+    const theme = chooseSize({ window, theme: themeSizes, boundaries: [800, 1100]})
+    this.setState({ theme })
     try {
       window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
     } catch (err) {
-      await sleep(500)
+      await sleep(250)
       window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
     }
   }
 
   resizeListener () {
     const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
-    window.$('#gallery').justifiedGallery({ rowHeight: rowHeight })
+    const theme = chooseSize({ window, theme: themeSizes, boundaries: [800, 1100]})
+    this.setState({ theme })
+    window.$('#gallery').justifiedGallery({ rowHeight })
   }
 
   componentWillUnmount() {
@@ -54,32 +60,47 @@ class Gallery extends Component {
   })
 }
 
+const chooseSize = ({ window, theme, boundaries }) => {
+  if (window.innerWidth <= boundaries[0]) {
+    return theme.small
+  } else if (window.innerWidth > boundaries[0] && window.innerWidth < boundaries[1]) {
+    return theme.medium
+  } else {
+    return theme.big
+  }
+}
+
 const sleep = (milliseconds) => {
   return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
-const Container = styled.div`
+const Container = styled.div(({ paddingBig }) => `
   display: grid;
   grid-template-rows: min-content min-content;
   justify-items: center;
   align-items: center;
   color: #303336;
   width: 100%;
-`
+  padding: ${paddingBig};
+`)
 
-const Header = styled.p`
-  font-size: calc(2rem + 1.5vw);
-  letter-spacing: 0.1vw;
+const Header1 = styled.div(({ header1: { fontSize, letterSpacing }, marginBig, paddingBig }) => `
+  font-size: ${fontSize};
+  letter-spacing: ${letterSpacing};
+  margin-top: ${marginBig};
+  padding: ${paddingBig};
+
   line-height: 1.2;
   font-family: 'Playfair Display';
-  margin-bottom: calc(1rem + 2.5vw);
-`
+  width: 90%;
+  text-align: center;
+`)
 
 const GalleryContainer = styled.div.attrs({
   id: 'gallery'
   })
 `
-
+  margin-top: ${props => props.marginBig};
 `
 
 const Image = styled.img.attrs(props => ({

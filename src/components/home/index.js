@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Slideshow, Blog, Gallery, About } from './components'
+import { Slideshow, Cards, Gallery, About } from './components'
 
 const Home = ({ theme }) => {
   return (
     <Container>
       <Slideshow/>
-      <Blog />
+      <Cards />
       <Gallery />
       <About />
     </Container>
