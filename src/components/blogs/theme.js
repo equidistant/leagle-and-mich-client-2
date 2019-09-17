@@ -72,9 +72,9 @@ const theme = {
       letterSpacing: `${big.header2.letterSpacing * 0.8}rem`,
     },
     header3: {
-      fontSize: `${big.header3.fontSize * 0.8}rem`,
-      letterSpacing: `${big.header3.letterSpacing * 0.8}rem`,
-      lineHeight: `${big.header3.lineHeight* 0.8}rem`,
+      fontSize: `${big.header3.fontSize * 0.9}rem`,
+      letterSpacing: `${big.header3.letterSpacing * 0.9}rem`,
+      lineHeight: `${big.header3.lineHeight* 0.9}rem`,
     },
     imgOverlay: {
       fontSize: `${big.imgOverlay.fontSize * 0.75}rem`,
@@ -85,8 +85,8 @@ const theme = {
       width: `${big.starBullet.width * 0.75}rem`,
       height: `${big.starBullet.height * 0.75}rem`,
     },
-    fontSize: `${big.fontSize * 0.75}rem`, // rem
-    letterSpacing: `${big.letterSpacing * 0.75}rem`,
+    fontSize: `${big.fontSize * 0.8}rem`, // rem
+    letterSpacing: `${big.letterSpacing * 0.8}rem`,
     paddingSmall: `${big.paddingSmall * 0.75}rem`,
     paddingBig: `${big.paddingBig * 0.75}rem`,
     marginSmall: `${big.marginSmall * 0.75}rem`,
@@ -116,8 +116,8 @@ const theme = {
       width: `${big.starBullet.width * 0.6}rem`,
       height: `${big.starBullet.height * 0.6}rem`,
     },
-    fontSize: `${big.fontSize * 0.5}rem`, // rem
-    letterSpacing: `${big.letterSpacing * 0.5}rem`,
+    fontSize: `${big.fontSize * 0.8}rem`, // rem
+    letterSpacing: `${big.letterSpacing * 0.8}rem`,
     paddingSmall: `${big.paddingSmall * 0.5}rem`,
     paddingBig: `${big.paddingBig * 0.5}rem`,
     marginSmall: `${big.marginSmall * 0.5}rem`,

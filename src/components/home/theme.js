@@ -64,16 +64,16 @@ const theme = {
       height: `${big.circle.height * 0.75}rem`,
     },
     header1: {
-      fontSize: `${big.header1.fontSize * 0.85}rem`,
+      fontSize: `${big.header1.fontSize * 0.9}rem`,
     },
     header2: {
-      fontSize: `${big.header2.fontSize * 0.8}rem`,
-      letterSpacing: `${big.header2.letterSpacing * 0.8}rem`,
+      fontSize: `${big.header2.fontSize * 0.9}rem`,
+      letterSpacing: `${big.header2.letterSpacing * 0.9}rem`,
     },
     header3: {
-      fontSize: `${big.header3.fontSize * 0.8}rem`,
-      letterSpacing: `${big.header3.letterSpacing * 0.8}rem`,
-      lineHeight: `${big.header3.lineHeight* 0.8}rem`,
+      fontSize: `${big.header3.fontSize * 0.9}rem`,
+      letterSpacing: `${big.header3.letterSpacing * 0.9}rem`,
+      lineHeight: `${big.header3.lineHeight* 0.9}rem`,
     },
     paddingSmall: `${big.paddingSmall * 0.75}rem`,
     paddingBig: `${big.paddingBig * 0.75}rem`,

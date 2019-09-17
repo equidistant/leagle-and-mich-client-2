@@ -62,6 +62,7 @@ const Header2 = styled.div(({ header2: { fontSize, letterSpacing }, marginSmall,
   letter-spacing: ${letterSpacing};
   color: #303336;
   font-family: 'Playfair Display';
+  font-weight: 700;
   padding: ${paddingBig};
 `)
 
@@ -70,6 +71,7 @@ const Header3 = styled.div(({ header3: { fontSize, letterSpacing }, paddingBig})
   letter-spacing: ${letterSpacing};
   font-family: $serif;
   padding: ${paddingBig};
+  font-style: italic;
 `)
 
 const RowContainer = styled.div`

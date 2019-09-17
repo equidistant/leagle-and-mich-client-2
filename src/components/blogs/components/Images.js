@@ -36,11 +36,11 @@ export const ImgWrapLandscape = styled.div(() => `
 `)
 
 export const ImgWrapPortraitLeft = styled(ImgWrapPortrait)`
-  margin-right: ${props => props.margin}${props => props.unit};
+  margin-right: ${props => props.marginSmall};
 `
 
 export const ImgWrapLandscapeLeft = styled(ImgWrapLandscape)`
-  margin-right: ${props => props.margin}${props => props.unit};
+  margin-right: ${props => props.marginSmall};
 `
 
 export const ImgPortraitHalf = styled.img.attrs(props => ({
