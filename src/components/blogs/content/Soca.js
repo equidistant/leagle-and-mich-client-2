@@ -4,7 +4,7 @@ import { Star, SocaImages } from '../../../images'
 import { useTheme } from '../../../effects'
 import { OuterContainer, CenterContainer,
    Header1, Header2, Header3, TextIntro, Text, BulletHeaderContainer, StarBullet,
-   HeaderImg, ImgRow, ImgWrap, ImgOverlay, ImgPortraitHalf, ImgWrapPortrait, ImgLandscapeHalf, ImgWrapLandscape, ImgWrapPortraitLeft, ImgWrapLandscapeLeft, Img} from '../components'
+   HeaderImg, ImgRow, ImgWrap, ImgOverlay, ImgOverlaySingle, ImgPortraitHalf, ImgWrapPortrait, ImgLandscapeHalf, ImgWrapLandscape, ImgWrapPortraitLeft, ImgWrapLandscapeLeft, Img} from '../components'
 
 
 const Blogs = () => {
@@ -54,7 +54,7 @@ const Blogs = () => {
             </Text>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Ommmmmmm...</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Ommmmmmm...</ImgOverlaySingle>
                 <Img img={images[18]}/>
               </ImgWrap>
             </ImgRow>
@@ -66,7 +66,7 @@ const Blogs = () => {
             </Text>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Mir i tisina...</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Mir i tisina...</ImgOverlaySingle>
                 <Img img={images[17]}/>
               </ImgWrap>
             </ImgRow>
@@ -78,13 +78,13 @@ const Blogs = () => {
             </Text>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Predah na vrhu...</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Predah na vrhu...</ImgOverlaySingle>
                 <Img img={images[15]}/>
               </ImgWrap>
             </ImgRow>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Složili smo svoj "cairn" i nastavili dalje</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Složili smo svoj "cairn" i nastavili dalje</ImgOverlaySingle>
                 <Img img={images[16]}/>
               </ImgWrap>
             </ImgRow>
@@ -103,7 +103,7 @@ const Blogs = () => {
             </Text>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Ovo je bilo zabavno!</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Ovo je bilo zabavno!</ImgOverlaySingle>
                 <Img img={images[19]}/>
               </ImgWrap>
             </ImgRow>
@@ -115,7 +115,7 @@ const Blogs = () => {
             </Text>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Vrlo osvježavajuće</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Vrlo osvježavajuće</ImgOverlaySingle>
                 <Img img={images[6]}/>
               </ImgWrap>
             </ImgRow>
@@ -136,7 +136,7 @@ const Blogs = () => {
             </Text>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Kratka ekspozicija</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Kratka ekspozicija</ImgOverlaySingle>
                 <Img img={images[5]}/>
               </ImgWrap>
             </ImgRow>
@@ -164,7 +164,7 @@ const Blogs = () => {
             </Text>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Njegovo veličanstvo, 106m visok slap Boka</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Njegovo veličanstvo, 106m visok slap Boka</ImgOverlaySingle>
                 <Img img={images[24]}/>
               </ImgWrap>
             </ImgRow>
@@ -201,13 +201,13 @@ const Blogs = () => {
             </ImgRow>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Most i ć (i šuma)</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Most i ć (i šuma)</ImgOverlaySingle>
                 <Img img={images[27]}/>
               </ImgWrap>
             </ImgRow>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Napokon neka ravna podloga da se slikamo</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Napokon neka ravna podloga da se slikamo</ImgOverlaySingle>
                 <Img img={images[28]}/>
               </ImgWrap>
             </ImgRow>
@@ -239,7 +239,7 @@ const Blogs = () => {
             </Text>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Bistra i hladna</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Bistra i hladna</ImgOverlaySingle>
                 <Img img={images[31]}/>
               </ImgWrap>
             </ImgRow>
@@ -261,7 +261,7 @@ const Blogs = () => {
             </ImgRow>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Boja rijeke sa slike je stvarna</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Boja rijeke sa slike je stvarna</ImgOverlaySingle>
                 <Img img={images[32]}/>
               </ImgWrap>
             </ImgRow>
@@ -281,13 +281,13 @@ const Blogs = () => {
             </ImgRow>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Sjedni tu da te slikam, dobra je pozadina</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Sjedni tu da te slikam, dobra je pozadina</ImgOverlaySingle>
                 <Img img={images[36]}/>
               </ImgWrap>
             </ImgRow>
             <ImgRow {...theme}>
               <ImgWrap>
-                <ImgOverlay {...theme}>Jedna za kraj...</ImgOverlay>
+                <ImgOverlaySingle {...theme}>Jedna za kraj...</ImgOverlaySingle>
                 <Img img={images[37]}/>
               </ImgWrap>
             </ImgRow>
