@@ -86,17 +86,3 @@ export const ImgOverlay = styled.div(({ imgOverlay: { letterSpacing, fontSize, p
   justify-content: flex-end;
   padding: ${padding};
 `)
-
-export const ImgOverlaySingle = styled.div(({ imgOverlay: { letterSpacing, fontSize, padding } }) => `
-  position: absolute;
-  bottom: 3px;
-  background-color: #0000007D;
-  width: 100%;
-  font-style: italic;
-  font-size: ${fontSize};
-  letter-spacing: ${letterSpacing};
-  color: #B09978;
-  display: flex;
-  justify-content: flex-end;
-  padding: ${padding};
-`)
