@@ -26,7 +26,7 @@ const big = {
   paddingBig: 2,
   marginSmall: 2.5, //rem,
   marginBig: 5, //rem,
-  fontSize: 2.2, // rem
+  fontSize: 2.4, // rem
   letterSpacing: 0.2 //rem
 }
 
