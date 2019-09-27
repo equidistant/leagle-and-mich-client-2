@@ -25,8 +25,8 @@ class Gallery extends Component {
   }
 
   async componentDidMount() {
-    const ratios = await getRatios({ url: 'soca' })
-    const images = getImages({ url: '/travels/soca', length: ratios.data.length })
+    const ratios = await getRatios({ url: '/gallery/front' })
+    const images = getImages({ url: '/gallery/front', length: ratios.data.length })
     this.setState({ images })
     const rowHeight = window.innerWidth > 800 ? window.innerWidth / 7 : window.innerWidth / 4
     window.addEventListener('resize', this.resizeListener.bind(this))

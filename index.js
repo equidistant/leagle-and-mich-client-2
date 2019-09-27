@@ -8,4 +8,4 @@ app.get('/*', function (req, res) {
    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
-app.listen(process.env.PORT, () => console.log(`CLIENT: RUNNING ON PORT ${process.env.PORT}`))
+app.listen(process.env.PORT, () => console.log(`React app running on port: ${process.env.PORT}`))
